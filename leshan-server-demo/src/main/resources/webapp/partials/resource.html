@@ -72,10 +72,11 @@
 			</div>
 		</div>
 		<div ng-class="{
-				'col-md-3': true,
+				'col-md-2': true,
 				'resource-value': true,
 				'resource-value-supposed': resource.valuesupposed}" ">
-				<span tooltip="{{resource.tooltip}}" tooltip-animation="false">{{display(resource)}}</span>
+				<span tooltip="{{resource.def.description}}" tooltip-animation="false">{{display(resource)}}</span>
 		</div>
+		<div class="col-md-1 resource-units">{{resource.def.units}}</div>
 	</div>
 </div>
