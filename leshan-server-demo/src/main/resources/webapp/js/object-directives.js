@@ -28,11 +28,17 @@ angular.module('objectDirectives', [])
         link: function (scope, element, attrs) {
             var parentPath = "";
             scope.status = {};
-            scope.status.open = true;
+            scope.status.open = false;
             
             scope.object.path = parentPath + "/" + scope.object.id;
             scope.object.create  =  {tooltip : "Create <br/>"   + scope.object.path};
-            
+
+            scope.$watch('status.open', function(newValue, oldValue) {
+                if (newValue) {
+                    scope.$broadcast('collapseEvent', newValue);
+                }
+            }, true);
+
             scope.create = function () {
                 var modalInstance = $modal.open({
                   templateUrl: 'partials/modal-instance.html',
@@ -42,7 +48,7 @@ angular.module('objectDirectives', [])
                     instanceId: function(){ return null;},
                   }
                 });
-            
+
                 modalInstance.result.then(function (result) {
                     var instance = result.instance;
                     promisedValues = instance.resources.map(r => r.getPromisedValue())

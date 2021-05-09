@@ -48,7 +48,7 @@
 								'btn-success': instance.write.status == 'SUCCESS'}">Write</button>
 				</div>
 				<div class="btn-group">
-					<button type="button" ng-click="instance.del.status = null; del()"
+					<button type="button" ng-click="instance.del.status = null; del()" ng_show="deletable()"
 							tooltip-html-unsafe={{instance.del.tooltip}} tooltip-placement="right" tooltip-animation="false" tooltip-append-to-body="true"
 							ng-class="{
 								'btn': true,

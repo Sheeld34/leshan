@@ -25,7 +25,6 @@ angular.module('instanceDirectives', [])
             parent: '=',
             settings: '='
         },
-        templateUrl: "partials/instance.html",
         link: function (scope, element, attrs) {
             var parentPath = "";
             scope.instance.path = scope.parent.path + "/" + scope.instance.id;
@@ -34,6 +33,15 @@ angular.module('instanceDirectives', [])
             scope.instance.write =  {tooltip : "Write <br/>"  + scope.instance.path};
             scope.instance.del  =  {tooltip : "Delete <br/>"   + scope.instance.path};
             scope.instance.observe = {tooltip : "Observe <br/>" + scope.instance.path};
+
+            scope.getTemplateUrl = "partials/instance.html";
+            if (scope.parent.urn) {
+                if (scope.parent.urn.startsWith("urn:oma:lwm2m:oma:3")) {
+                    scope.getTemplateUrl = "partials/models/3/instance.html";
+                } else if (scope.parent.urn.startsWith("urn:oma:lwm2m:oma:6")) {
+                    scope.getTemplateUrl = "partials/models/6/instance.html";
+                }
+            }
 
             scope.writable = function() {
                 return scope.instance.resources.find(resource => resource.def.operations === "W" || resource.def.operations === "RW");
@@ -218,6 +226,7 @@ angular.module('instanceDirectives', [])
                     console.error(errormessage);
                 });
             };
-        }
+        },
+        template: '<ng-include src="getTemplateUrl"></ng-include>'
     };
 });
