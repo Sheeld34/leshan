@@ -46,7 +46,7 @@ angular.module('objectLocationControllers', [])
 			}
 		};
 
-		$scope.$on('collapseEvent', function(event, open) {
+		$scope.$on('collapseObjectEvent', function(event, open) {
 			leafletData.getMap().then(function(map) {
 				map.invalidateSize();
 			});

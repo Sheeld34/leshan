@@ -35,7 +35,7 @@ angular.module('objectDirectives', [])
 
             scope.$watch('status.open', function(newValue, oldValue) {
                 if (newValue) {
-                    scope.$broadcast('collapseEvent', newValue);
+                    scope.$broadcast('collapseObjectEvent', newValue);
                 }
             }, true);
 
