@@ -117,6 +117,7 @@ li.navlink>a:focus{
 
 .resource-value {
 	font-weight: bold;
+	text-align: right;
 }
 
 .resource-value-supposed {
