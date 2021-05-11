@@ -36,7 +36,9 @@ var leshanApp = angular.module('leshanApp',[
         'angular-dialgauge',
         'nvd3',
         'ui-leaflet',
-
+        'ui.odometer',
+		'monitoringGaugeDirectives',
+		'monitoringOdometerDirectives',
         'objectLocationControllers',
         'model3-resourceDirectives',
 ]);

@@ -1,0 +1,28 @@
+<div>
+	<accordion-group ng-init="status.open = true" is-open="status.open">
+		<accordion-heading class="resource-heading">
+			<div class="row">
+				<div class="col-md-4 resource-name">{{resource.def.name}}</div>
+				<div class="col-md-1 text-muted small"><span ng-if="resource.observed" class="glyphicon glyphicon-eye-open"></span></div>
+				<div class="col-md-3">
+					<div ng-if="!status.open" ng-include="'partials/models/resource-observe.html'"></div>
+				</div>
+				<div class="col-md-2">
+					<div ng-if="!status.open" ng-class="{
+							'resource-value': true,
+							'resource-value-supposed': resource.valuesupposed}">
+							<span tooltip="{{resource.def.description}}" tooltip-animation="false">{{display(resource)}}</span>
+					</div>
+				</div>
+				<div class="col-md-1">
+					<div ng-if="!status.open" class="resource-units">{{resource.def.units}}</div>
+				</div>
+				<div class="col-md-1 text-muted small">
+					<i class="pull-right glyphicon"
+						ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+				</div>
+			</div>
+		</accordion-heading>
+ 		<monitoring-gauge resource='resource' settings='settings'></monitoring-gauge>
+	</accordion-group>
+</div>

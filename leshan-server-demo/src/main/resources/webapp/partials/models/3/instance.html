@@ -1,7 +1,6 @@
 <div>
 	<div class="row">
 		<div class="col-md-4 instance-name">{{instance.name}}</div>
-		<div class="col-md-1 text-muted small">{{instance.path}}</div>
 		<div class="col-md-1 text-muted small"><span ng-if="instance.observed" class="glyphicon glyphicon-eye-open"></span></div>
 		<div class="col-md-6" ng-include="'partials/models/instance-observe.html'"></div>
 	</div>
