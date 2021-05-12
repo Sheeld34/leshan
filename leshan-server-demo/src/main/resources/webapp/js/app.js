@@ -18,35 +18,38 @@
 
 /* App Module */
 
-var leshanApp = angular.module('leshanApp',[ 
-        'ngRoute',
-        'clientControllers',
-        'objectDirectives',
-        'instanceDirectives',
-        'resourceDirectives',
-        'resourceFormDirectives',
-        'lwResourcesServices',
-        'securityControllers',
-        'uiDialogServices',
-        'modalInstanceControllers',
-        'modalResourceControllers',
-        'ui.bootstrap',
-        'helperServices',
-        'fileModelDirectives',
-        'angular-dialgauge',
-        'nvd3',
-        'ui-leaflet',
-        'ui.odometer',
-		'monitoringGaugeDirectives',
-		'monitoringOdometerDirectives',
-        'objectLocationControllers',
-        'model3-resourceDirectives',
+var sheeldApp = angular.module('SheeldApp', [
+	'ngRoute',
+	'clientControllers',
+	'objectDirectives',
+	'instanceDirectives',
+	'resourceDirectives',
+	'resourceFormDirectives',
+	'resourceObserveDirectives',
+	'lwResourcesServices',
+	'securityControllers',
+	'uiDialogServices',
+	'modalInstanceControllers',
+	'modalResourceControllers',
+	'ui.bootstrap',
+	'helperServices',
+	'fileModelDirectives',
+	'angular-dialgauge',
+	'nvd3',
+	'ui-leaflet',
+	'ui.odometer',
+	'linearGraphDirectives',
+	'monitoringGaugeDirectives',
+	'monitoringOdometerDirectives',
+	'objectLocationControllers',
+	'model3-resourceDirectives',
+	'model26241-resourceDirectives',
 ]);
 
-leshanApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-    $routeProvider.
-        when('/clients',           { templateUrl : 'partials/client-list.html',   controller : 'ClientListCtrl' }).
-        when('/clients/:clientId', { templateUrl : 'partials/client-detail.html', controller : 'ClientDetailCtrl' }).
-        when('/security',          { templateUrl : 'partials/security-list.html', controller : 'SecurityCtrl' }).
-        otherwise({ redirectTo : '/clients' });
+sheeldApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	$routeProvider.
+		when('/clients', { templateUrl: 'partials/client-list.html', controller: 'ClientListCtrl' }).
+		when('/clients/:clientId', { templateUrl: 'partials/client-detail.html', controller: 'ClientDetailCtrl' }).
+		when('/security', { templateUrl: 'partials/security-list.html', controller: 'SecurityCtrl' }).
+		otherwise({ redirectTo: '/clients' });
 }]);

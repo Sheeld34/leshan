@@ -1,0 +1,23 @@
+<accordion-heading>
+	<div class="row">
+		<div class="col-md-4 resource-name">{{resource.def.name}}</div>
+		<div class="col-md-1 text-muted small"><span ng-if="resource.observed" class="glyphicon glyphicon-eye-open"></span></div>
+		<div class="col-md-3">
+			<resource-observe ng-if="!status.open" resource='resource' parent='parent' settings='settings'></resource-observe>
+		</div>
+		<div class="col-md-2">
+			<div ng-if="!status.open" ng-class="{
+					'resource-value': true,
+					'resource-value-supposed': resource.valuesupposed}">
+					<span tooltip="{{resource.def.description}}" tooltip-animation="false">{{display(resource)}}</span>
+			</div>
+		</div>
+		<div class="col-md-1">
+			<div ng-if="!status.open" class="resource-units">{{resource.def.units}}</div>
+		</div>
+		<div class="col-md-1 text-muted small">
+			<i class="pull-right glyphicon"
+				ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+		</div>
+	</div>
+</accordion-heading>

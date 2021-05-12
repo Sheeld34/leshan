@@ -1,6 +1,6 @@
-angular.module('model3-resourceDirectives', [])
+angular.module('model26241-resourceDirectives', [])
 
-.directive('model3Resource', function($compile, $routeParams, $http, dialog, $filter, lwResources, $modal, helper) {
+.directive('model26241Resource', function($compile, $routeParams, $http, dialog, $filter, lwResources, $modal, helper) {
 	return {
 		restrict: "E",
 		replace: true,
@@ -11,7 +11,24 @@ angular.module('model3-resourceDirectives', [])
 		},
 		link: function(scope, element, attrs) {
 			switch (scope.resource.def.id) {
-				case 9: // Battery Level
+				case 13: // Charging stage duration
+				case 21: // Momentary current value
+				case 22: // Remaining charge
+				case 24: // Momentary energy consumption
+				case 25: // Energy left
+				case 26: // Distance remaining
+				case 27: // Distance traveled
+					scope.getTemplateUrl = "partials/resource-odometer.html";
+					break;
+
+				case 14: // Minimum cell voltage
+				case 15: // 
+				case 16: // 
+//				case 17: // 
+				case 18: // 
+				case 19: // 
+				case 20: // 
+				case 23: //
 					scope.getTemplateUrl = "partials/resource-gauge.html";
 					break;
 
@@ -19,7 +36,7 @@ angular.module('model3-resourceDirectives', [])
 					scope.getTemplateUrl = "partials/resource.html";
 					break;
 			}
-			
+
 			scope.display = function(resource, default_value) {
 				if ('undefined' !== typeof(resource.value)) {
 					if (resource.def.type === "float") {

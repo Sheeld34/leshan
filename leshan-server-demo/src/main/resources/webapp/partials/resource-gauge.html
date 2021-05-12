@@ -1,0 +1,6 @@
+<div class="resource-panel">
+	<accordion-group ng-init="status.open = true" is-open="status.open">
+		<div ng-include="'partials/resource-accordion-heading'"></div>
+ 		<monitoring-gauge resource='resource' parent='parent' settings='settings'></monitoring-gauge>
+	</accordion-group>
+</div>

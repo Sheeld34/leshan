@@ -40,6 +40,8 @@ angular.module('instanceDirectives', [])
                     scope.getTemplateUrl = "partials/models/3/instance.html";
                 } else if (scope.parent.urn.startsWith("urn:oma:lwm2m:oma:6")) {
                     scope.getTemplateUrl = "partials/models/6/instance.html";
+                } else if (scope.parent.urn.startsWith("urn:oma:lwm2m:x:26241")) {
+                    scope.getTemplateUrl = "partials/models/26241/instance.html";
                 }
             }
 

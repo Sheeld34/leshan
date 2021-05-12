@@ -2,52 +2,22 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="row">
-				<div style="width: 150px; margin-left: auto; margin-right: auto;">
+				<div class="col-md-9" style="width: 150px; margin-left: auto; margin-right: auto;margin-bottom: 15px;">
 					<ng-odometer
 						value="{{display(resource, 0)}}"
 						options="{theme: 'car', duration: 1000}"
 						style="float:right">
 					</ng-odometer>
 				</div>
+				<div ng-if="col-md-2" class="resource-units">{{resource.def.units}}</div>
 			</div>
 			<div class="row">
-				<div role="toolbar" style="padding-left: 50px;">
-					<div class="btn-group">
-						<button type="button" ng-click="resource.observe.status = null; startObserve()"
-								tooltip-html-unsafe={{resource.observe.tooltip}} tooltip-placement="right" tooltip-animation="false" tooltip-append-to-body="true"
-								ng-class="{
-										'btn': true,
-										'btn-xs': true,
-										'btn-default': resource.observe.status == null,
-										'btn-info': resource.observe.status == 'TIMEOUT',
-										'btn-danger': resource.observe.status == 'ERROR',
-										'btn-warning': resource.observe.status == 'INVALID',
-										'btn-success': resource.observe.status == 'SUCCESS' }">Observe <span class="glyphicon glyphicon-play"></span></button>
-						<button type="button" ng-click="stopObserve()"
-								ng-class="{
-									'btn': true,
-										'btn-xs': true,
-										'btn-default': resource.observe.stop == null,
-										'btn-success': resource.observe.stop == 'success' }"><span class="glyphicon glyphicon-stop"></span></button>
-					</div>
-					<div class="btn-group">
-						<button type="button" ng-click="resource.read.status = null; read()"
-								tooltip-html-unsafe={{resource.read.tooltip}} tooltip-placement="right" tooltip-animation="false" tooltip-append-to-body="true"
-								ng-class="{
-										'btn': true,
-										'btn-xs': true,
-										'btn-default': resource.read.status == null,
-										'btn-info': resource.read.status == 'TIMEOUT',
-										'btn-danger': resource.read.status == 'ERROR',
-										'btn-warning': resource.read.status == 'INVALID',
-										'btn-success': resource.read.status == 'SUCCESS' }">Read</button>
-					</div>
-					<div class="btn-group"><span ng-if="resource.observed" class="glyphicon glyphicon-eye-open"></span></div>
-				</div>
+				<div class="col-md-1" class="btn-group"><span ng-if="resource.observed" class="glyphicon glyphicon-eye-open"></span></div>
+				<resource-observe class="col-md-10" resource='resource' parent='parent' settings='settings'></resource-observe>
 			</div>
 		</div>
 		<div class="col-md-9">
-			<nvd3 options="chart_options" data="chart_data"></nvd3>
+			<linear-graph></linear-graph>
 		</div>
 	</div>
 </div>
