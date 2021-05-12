@@ -62,7 +62,7 @@ angular.module('angular-dialgauge', [
                 var width;
                 var relative = false;
                 var scaling = '';
-
+                var valuePrecision = 0;
 
                 var defaults = {                     // Default settings
                     scaleMin: 0,
@@ -178,14 +178,16 @@ angular.module('angular-dialgauge', [
 
                 // Set a watch on the model so we can update the dynamic part of the gauge
                 $scope.$watch("ngModel", function (value) {
-					updateValue(value);
+                    updateValue(value);
                 });
  
                 $scope.$watch("value", function () {
-					updateValue(parseInt($scope.value));
+                    var newValue = parseFloat($scope.value);
+                    valuePrecision = getFloatPrecision(newValue);
+                    updateValue(newValue);
                 });
 
-				function updateValue(value) {
+                function updateValue(value) {
                     // The gauge isn't updated immediately.
                     // We use a timer to update the gauge dynamically
                     if (currentValue == null) {
@@ -436,7 +438,7 @@ angular.module('angular-dialgauge', [
 
                     if (newValue !== undefined) {
                         path += '<text text-anchor="middle" x="' + center + '" y="' + center + '">' +
-                        '<tspan class="dialgauge-value">' + Math.floor(newValue) + '</tspan>';
+                        '<tspan class="dialgauge-value">' + newValue.toFixed(valuePrecision) + '</tspan>';
                     }
 
                     if (cfg.units != undefined) {
@@ -537,6 +539,17 @@ angular.module('angular-dialgauge', [
                         s += c;
                     }
                     return s.toUpperCase();
+                }
+
+                function getFloatPrecision(a) {
+                    if (!isFinite(a)) {
+                        return 0;
+                    }
+                    var e = 1, p = 0;
+                    while (Math.round(a * e) / e !== a) {
+                        e *= 10; p++;
+                    }
+                    return p;
                 }
             }]
         };
