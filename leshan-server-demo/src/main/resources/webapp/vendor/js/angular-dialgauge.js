@@ -436,7 +436,7 @@ angular.module('angular-dialgauge', [
                     'fill="transparent"' +
                     '/>';
 
-                    if (newValue !== undefined) {
+                    if (newValue !== undefined && newValue !== null) {
                         path += '<text text-anchor="middle" x="' + center + '" y="' + center + '">' +
                         '<tspan class="dialgauge-value">' + newValue.toFixed(valuePrecision) + '</tspan>';
                     }
