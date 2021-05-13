@@ -43,7 +43,7 @@ var sheeldApp = angular.module('SheeldApp', [
 	'monitoringOdometerDirectives',
 	'objectLocationControllers',
 	'model3-resourceDirectives',
-	'model26241-resourceDirectives',
+	'model27241-resourceDirectives',
 ]);
 
 sheeldApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

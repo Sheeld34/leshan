@@ -1,6 +1,6 @@
-angular.module('model26241-resourceDirectives', [])
+angular.module('model27241-resourceDirectives', [])
 
-.directive('model26241Resource', function($compile, $routeParams, $http, dialog, $filter, lwResources, $modal, helper) {
+.directive('model27241Resource', function($compile, $routeParams, $http, dialog, $filter, lwResources, $modal, helper) {
 	return {
 		restrict: "E",
 		replace: true,
