@@ -24,7 +24,6 @@ angular.module('objectDirectives', [])
             object: '=',
             settings: '='
         },
-        templateUrl: "partials/object.html",
         link: function (scope, element, attrs) {
             var parentPath = "";
             scope.status = {};
@@ -32,6 +31,13 @@ angular.module('objectDirectives', [])
             
             scope.object.path = parentPath + "/" + scope.object.id;
             scope.object.create  =  {tooltip : "Create <br/>"   + scope.object.path};
+
+            // Don't display Server object
+            if (scope.object.urn.startsWith("urn:oma:lwm2m:oma:1")) {
+                scope.getTemplateUrl = null;
+            } else {
+                scope.getTemplateUrl = "partials/object.html";
+            }
 
             scope.$watch('status.open', function(newValue, oldValue) {
                 if (newValue) {
@@ -100,6 +106,7 @@ angular.module('objectDirectives', [])
                     });
                 });
             };
-        }
+        },
+        template: '<ng-include src="getTemplateUrl"></ng-include>'
     };
 });
