@@ -1,0 +1,19 @@
+# systemctl enable /var/leshan/mehariclub/leshan_mehariclub.service
+# systemctl start leshan_mehariclub
+# systemctl status leshan_mehariclub
+
+[Unit]
+Description=Leshan server
+
+[Service]
+User=root
+WorkingDirectory=/var/leshan/mehariclub
+ExecStart=/bin/java -jar /var/leshan/server/leshan-server-demo-2.0.0-SNAPSHOT-jar-with-dependencies.jar -wp 8081 -lp 5685 -slp 5686 -m /var/leshan/models
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

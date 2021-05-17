@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>Emus G1 BMS</Name>
+		<Description1><![CDATA[EMUS G1 Battery Management System]]></Description1>
+		<ObjectID>26241</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:26241</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="0">
+				<Name>Ignition Key</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Input Ignition Key, 1 = ignition is on]]></Description>
+			</Item>
+			<Item ID="1">
+				<Name>Charger Mains</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Input Charger Mains, 1 = connected]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>Fast Charge</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Input Fast Charge, 1 = fast charge selected]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>Leakage Sensor</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Input Leakage Sensor, 1 = leakage detected]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>Charger Enable</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Output Charger Enable, 1 = enabled]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>Heater Enable</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Output Heater Enable, 1 = enabled]]></Description>
+			</Item>
+			<Item ID="6">
+				<Name>Battery Contactor</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Output Battery Contactor, 1 = enabled]]></Description>
+			</Item>
+			<Item ID="7">
+				<Name>Battery Fan</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Output Battery Fan, 1 = enabled]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>Power Reduction</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Output Power Reduction, 1 = enabled]]></Description>
+			</Item>
+			<Item ID="9">
+				<Name>Charging Interlock</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Output Charging Interlock, 1 = enabled]]></Description>
+			</Item>
+			<Item ID="10">
+				<Name>DCDC Control</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Output DCDC Control, 1 = enabled]]></Description>
+			</Item>
+			<Item ID="11">
+				<Name>Contactor Pre-Charge</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Output Contactor Pre-Charge, 1 = enabled]]></Description>
+			</Item>
+			<Item ID="12">
+				<Name>Charging stage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..6</RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Charging stage byte with following value meanings:
+0 = Disconnected – charger (any type) is disconnected;
+1 = Pre-heating – battery is being pre-heated to avoid charging in low temperature;
+2 = Pre-charging – battery is being pre-charged with small current;
+3 = Main Charging – battery is being charged with Slow or Fast charging current (depending on Fast Charge input state);
+4 = Balancing – cells are being balanced to equalize their charge level;
+5 = Charging Finished;
+6 = Charging Error;]]></Description>
+			</Item>
+			<Item ID="13">
+				<Name>Charging stage duration</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>min</Units>
+				<Description><![CDATA[Time elapsed in current charging stage]]></Description>
+			</Item>
+			<Item ID="14">
+				<Name>Minimum cell voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[Lowest cell voltage in the battery pack]]></Description>
+			</Item>
+			<Item ID="15">
+				<Name>Maximum cell voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[Highest cell voltage in the battery pack]]></Description>
+			</Item>
+			<Item ID="16">
+				<Name>Average cell voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[Average cell voltage in the battery pack]]></Description>
+			</Item>
+			<Item ID="17">
+				<Name>Total voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[Total voltage of all cells in the battery pack]]></Description>
+			</Item>
+			<Item ID="18">
+				<Name>Minimum cell temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>-40..90</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Lowest cell module temperature in the battery pack]]></Description>
+			</Item>
+			<Item ID="19">
+				<Name>Maximum cell temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>-40..90</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Highest cell module temperature in the battery pack]]></Description>
+			</Item>
+			<Item ID="20">
+				<Name>Average cell temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>-40..90</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Average cell module temperature in the battery pack]]></Description>
+			</Item>
+			<Item ID="21">
+				<Name>Momentary current value</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[Momentary current value]]></Description>
+			</Item>
+			<Item ID="22">
+				<Name>Remaining charge</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[Estimated remaining charge in the battery pack]]></Description>
+			</Item>
+			<Item ID="23">
+				<Name>State of charge</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..100</RangeEnumeration>
+				<Units>%</Units>
+				<Description><![CDATA[Estimated state of charge of the battery pack]]></Description>
+			</Item>
+			<Item ID="24">
+				<Name>Momentary energy consumption</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>Wh/km</Units>
+				<Description><![CDATA[Estimated momentary energy consumption per distance unit]]></Description>
+			</Item>
+			<Item ID="25">
+				<Name>Energy left</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>kWh</Units>
+				<Description><![CDATA[Estimated energy left in battery pack]]></Description>
+			</Item>
+			<Item ID="26">
+				<Name>Distance remaining</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>km</Units>
+				<Description><![CDATA[Estimated distance remaining]]></Description>
+			</Item>
+			<Item ID="27">
+				<Name>Distance traveled</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>km</Units>
+				<Description><![CDATA[Distance traveled since the last full charge of the battery]]></Description>
+			</Item>
+		</Resources>
+		<Description2 />
+	</Object>
+</LWM2M>

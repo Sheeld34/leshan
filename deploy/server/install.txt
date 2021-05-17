@@ -1,0 +1,9 @@
+#Ubuntu
+apt-get update
+apt-get upgrade
+apt-get install default-jre nginx letsencrypt
+
+# Copier le dossier Leshan dans /var
+# Copier le dossier nginx dans /etc/nginx
+
+# ln -s /etc/nginx/sites-available/leshan_demo /etc/nginx/sites-enabled/

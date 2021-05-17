@@ -1,0 +1,19 @@
+# systemctl enable /var/leshan/demo/leshan_client_demo.service
+# systemctl start leshan_client_demo
+# systemctl status leshan_client_demo
+
+[Unit]
+Description=Leshan client demo
+
+[Service]
+User=root
+WorkingDirectory=/var/leshan/demo
+ExecStart=/var/leshan/demo/TesttLwM2MLinux.out
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
