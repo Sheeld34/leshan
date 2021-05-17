@@ -33,7 +33,7 @@ angular.module('objectDirectives', [])
             scope.object.create  =  {tooltip : "Create <br/>"   + scope.object.path};
 
             // Don't display Server object
-            if (scope.object.urn.startsWith("urn:oma:lwm2m:oma:1")) {
+            if (scope.object.urn && scope.object.urn.startsWith("urn:oma:lwm2m:oma:1")) {
                 scope.getTemplateUrl = null;
             } else {
                 scope.getTemplateUrl = "partials/object.html";
