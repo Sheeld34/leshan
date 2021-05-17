@@ -106,8 +106,16 @@ li.navlink>a:focus{
 /* Object instance level */
 
 .instance-name {
-	font-size: 16px;
-	padding-left: 30px;
+	font-size: 17px;
+}
+
+.instance-single-line {
+	margin-left: -4px;
+	margin-right: -4px;
+}
+
+.object-location-header {
+	margin-bottom: 10px;
 }
 
 /* Resource level */
