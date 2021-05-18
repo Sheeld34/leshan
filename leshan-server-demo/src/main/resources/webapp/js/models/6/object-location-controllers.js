@@ -21,26 +21,26 @@ angular.module('objectLocationControllers', [])
 			baselayers: {
 				osm: {
 					name: 'OpenStreetMap',
-					url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+					url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 					type: 'xyz',
 					layerOptions: {
-						attribution: '© <a href="http://www.openstreetmap.org/copyright" target="blank">OpenStreetMap</a> contributors'
+						attribution: '© <a href="https://www.openstreetmap.org/copyright" target="blank">OpenStreetMap</a> contributors'
 					}
 				},
 				here_normal: {
 					name: 'HERE Map',
-					url: 'http://1.base.maps.cit.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?lg=FRE&app_id=xWVIueSv6JL0aJ5xqTxb&app_code=djPZyynKsbTjIUDOBcHZ2g',
+					url: 'https://1.base.maps.cit.api.here.com/maptile/2.1/maptile/newest/normal.day/{z}/{x}/{y}/256/png8?lg=FRE&app_id=xWVIueSv6JL0aJ5xqTxb&app_code=djPZyynKsbTjIUDOBcHZ2g',
 					type: 'xyz',
 					layerOptions: {
-						attribution: '© 2021 <a href="http://www.here.com" target="blank">HERE</a>'
+						attribution: '© 2021 <a href="https://www.here.com" target="blank">HERE</a>'
 					}
 				},
 				here_hybrid: {
 					name: 'HERE Satellite',
-					url: 'http://1.aerial.maps.cit.api.here.com/maptile/2.1/maptile/newest/hybrid.day/{z}/{x}/{y}/256/png8?lg=FRE&app_id=xWVIueSv6JL0aJ5xqTxb&app_code=djPZyynKsbTjIUDOBcHZ2g',
+					url: 'https://1.aerial.maps.cit.api.here.com/maptile/2.1/maptile/newest/hybrid.day/{z}/{x}/{y}/256/png8?lg=FRE&app_id=xWVIueSv6JL0aJ5xqTxb&app_code=djPZyynKsbTjIUDOBcHZ2g',
 					type: 'xyz',
 					layerOptions: {
-						attribution: '© 2021 <a href="http://www.here.com" target="blank">HERE</a>'
+						attribution: '© 2021 <a href="https://www.here.com" target="blank">HERE</a>'
 					}
 				}
 			}
@@ -94,7 +94,7 @@ angular.module('objectLocationControllers', [])
 								lat: latitude,
 								lng: longitude,
 								message: timestamp,
-								focus: true
+								focus: false
 							}
 						};
 
