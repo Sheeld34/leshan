@@ -1,9 +1,18 @@
 #Ubuntu
 apt-get update
 apt-get upgrade
-apt-get install default-jre nginx letsencrypt
+apt-get install default-jre nginx
 
 # Copier le dossier Leshan dans /var
+# Copier le dossier models dans /var/leshan
 # Copier le dossier nginx dans /etc/nginx
 
 # ln -s /etc/nginx/sites-available/leshan_demo /etc/nginx/sites-enabled/
+
+# Installer certbot
+snap install core
+snap refresh core
+snap install --classic certbot
+ln -s /snap/bin/certbot /usr/bin/certbot
+
+# Configuger certbot pour les sites
