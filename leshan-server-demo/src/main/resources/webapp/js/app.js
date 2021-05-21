@@ -31,6 +31,7 @@ var sheeldApp = angular.module('SheeldApp', [
 	'uiDialogServices',
 	'modalInstanceControllers',
 	'modalResourceControllers',
+	'resourceAccordionGroupControllers',
 	'ui.bootstrap',
 	'helperServices',
 	'fileModelDirectives',

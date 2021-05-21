@@ -1,4 +1,4 @@
-<div class="resource-panel">
+<div class="resource-panel" ng-controller="resourceAccordionGroupController" >
 	<accordion-group ng-init="status.open = false" is-open="status.open">
 		<div ng-include="'partials/resource-accordion-heading.html'"></div>
  		<monitoring-gauge resource='resource' parent='parent' settings='settings'></monitoring-gauge>

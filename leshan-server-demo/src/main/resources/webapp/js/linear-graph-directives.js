@@ -4,7 +4,7 @@ angular.module('linearGraphDirectives', [])
 	return {
 		restrict: "E",
 		replace: true,
-        template: '<nvd3 options="chart_options" data="chart_data"></nvd3>',
+        template: '<nvd3 options="chart_options" data="chart_data" api="api"></nvd3>',
 		link: function(scope, element, attrs) {
 			// Retrieve min/max ranges
 			var idx_min = scope.resource.def.range.indexOf(".");
@@ -86,6 +86,12 @@ angular.module('linearGraphDirectives', [])
 					scope.chart_data[0].values.push({ x: Date.now(), y: value });
 				}
 			}, true);
+
+			scope.$on('collapseResourceEvent', function(event, open) {
+				if (open === true) {
+					scope.api.refresh();
+				}
+			});
 		}
 	};
 });
