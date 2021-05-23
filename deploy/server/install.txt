@@ -1,3 +1,6 @@
+# vps683263.ovh.net
+# root = St3j4hB5P4Yw2jU77JbWds3E527QCjgz
+
 #Ubuntu
 apt-get update
 apt-get upgrade
@@ -16,3 +19,20 @@ snap install --classic certbot
 ln -s /snap/bin/certbot /usr/bin/certbot
 
 # Configuger certbot pour les sites
+
+# Firewall
+# To                         Action      From
+# --                         ------      ----
+# 22                         ALLOW IN    Anywhere                  
+# 80                         ALLOW IN    Anywhere                  
+# 443                        ALLOW IN    Anywhere                  
+# 8080                       ALLOW IN    Anywhere                  
+# 5683                       ALLOW IN    Anywhere                  
+# 5684                       ALLOW IN    Anywhere                  
+# 5685                       ALLOW IN    Anywhere                  
+# 5686                       ALLOW IN    Anywhere         
+
+ufw allow 22
+ufw allow xxx
+ufw enable
+ufw status verbose
