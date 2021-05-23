@@ -1,1 +1,1 @@
-java -jar target/leshan-server-demo-2.0.0-SNAPSHOT-jar-with-dependencies.jar -m ..\deploy\models
+java -jar target/leshan-server-demo-2.0.0-M3-jar-with-dependencies.jar -m ..\deploy\models

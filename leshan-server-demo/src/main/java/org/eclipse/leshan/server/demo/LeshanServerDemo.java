@@ -24,7 +24,11 @@ import java.net.BindException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.URI;
-import java.security.*;
+import java.security.Key;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -157,25 +161,27 @@ public class LeshanServerDemo {
                 "The path to your server private key file.\nThe private key should be in PKCS#8 format (DER encoding)."
                         + X509Chapter);
         options.addOption("cert", true,
-                "The path to your server certificate file.\n"
+                "The path to your server certificate or certificate chain file.\n"
                         + "The certificate Common Name (CN) should generally be equal to the server hostname.\n"
-                        + "The certificate should be in X509v3 format (DER encoding).");
+                        + "The certificate should be in X509v3 format (DER or PEM encoding).\n"
+                        + "The certificate chain should be in X509v3 format (PEM encoding).");
 
         final StringBuilder trustStoreChapter = new StringBuilder();
         trustStoreChapter.append("\n .");
-        trustStoreChapter.append("\n URI format: file://<path-to-trust-store-file>#<hex-strore-password>#<alias-pattern>");
+        trustStoreChapter
+                .append("\n URI format: file://<path-to-trust-store-file>#<hex-strore-password>#<alias-pattern>");
         trustStoreChapter.append("\n .");
         trustStoreChapter.append("\n Where:");
         trustStoreChapter.append("\n - path-to-trust-store-file is path to pkcs12 trust store file");
         trustStoreChapter.append("\n - hex-store-password is HEX formatted password for store");
-        trustStoreChapter.append("\n - alias-pattern can be used to filter trusted certificates and can also be empty to get all");
+        trustStoreChapter.append(
+                "\n - alias-pattern can be used to filter trusted certificates and can also be empty to get all");
         trustStoreChapter.append("\n .");
         trustStoreChapter.append("\n Default: All certificates are trusted which is only OK for a demo.");
 
         options.addOption("truststore", true,
                 "The path to a root certificate file to trust or a folder containing all the trusted certificates in X509v3 format (DER encoding) or trust store URI."
-                        + trustStoreChapter
-                        + X509ChapterDeprecated);
+                        + trustStoreChapter + X509ChapterDeprecated);
         options.addOption("ks", "keystore", true,
                 "Set the key store file.\nIf set, X.509 mode is enabled, otherwise built-in RPK credentials are used.");
         options.addOption("ksp", "storepass", true, "Set the key store password.");
@@ -292,11 +298,11 @@ public class LeshanServerDemo {
         }
 
         // get X509 info
-        X509Certificate certificate = null;
+        X509Certificate[] certificate = null;
         if (cl.hasOption("cert")) {
             try {
                 privateKey = SecurityUtil.privateKey.readFromFile(cl.getOptionValue("prik"));
-                certificate = SecurityUtil.certificate.readFromFile(cl.getOptionValue("cert"));
+                certificate = SecurityUtil.certificateChain.readFromFile(cl.getOptionValue("cert"));
             } catch (Exception e) {
                 System.err.println("Unable to load X509 files : " + e.getMessage());
                 e.printStackTrace();
@@ -329,7 +335,8 @@ public class LeshanServerDemo {
 
                 // check input exists
                 if (!input.exists()) {
-                    System.err.println("Failed to load trust store - file or directory does not exist : " + input.toString());
+                    System.err.println(
+                            "Failed to load trust store - file or directory does not exist : " + input.toString());
                     formatter.printHelp(USAGE, options);
                     return;
                 }
@@ -355,7 +362,7 @@ public class LeshanServerDemo {
         String keyStorePath = cl.getOptionValue("ks");
         String keyStoreType = cl.getOptionValue("kst", KeyStore.getDefaultType());
         String keyStorePass = cl.getOptionValue("ksp");
-        String keyStoreAlias = cl.getOptionValue("ksa");
+        String keyStoreAlias = cl.getOptionValue("ksa", "leshan");
         String keyStoreAliasPass = cl.getOptionValue("ksap");
 
         // Get mDNS publish switch
@@ -377,7 +384,7 @@ public class LeshanServerDemo {
 
     public static void createAndStartServer(String webAddress, int webPort, String localAddress, Integer localPort,
             String secureLocalAddress, Integer secureLocalPort, String modelsFolderPath, String redisUrl,
-            PublicKey publicKey, PrivateKey privateKey, X509Certificate certificate, List<Certificate> trustStore,
+            PublicKey publicKey, PrivateKey privateKey, X509Certificate[] certificate, List<Certificate> trustStore,
             String keyStorePath, String keyStoreType, String keyStorePass, String keyStoreAlias,
             String keyStoreAliasPass, Boolean publishDNSSdServices, boolean supportDeprecatedCiphers) throws Exception {
         // Prepare LWM2M server
@@ -416,12 +423,12 @@ public class LeshanServerDemo {
         DtlsConnectorConfig.Builder dtlsConfig = new DtlsConnectorConfig.Builder();
         dtlsConfig.setRecommendedCipherSuitesOnly(!supportDeprecatedCiphers);
 
-        X509Certificate serverCertificate = null;
+        X509Certificate[] serverCertificateChain = null;
         if (certificate != null) {
             // use X.509 mode (+ RPK)
-            serverCertificate = certificate;
+            serverCertificateChain = certificate;
             builder.setPrivateKey(privateKey);
-            builder.setCertificateChain(new X509Certificate[] { serverCertificate });
+            builder.setCertificateChain(serverCertificateChain);
         } else if (publicKey != null) {
             // use RPK only
             builder.setPublicKey(publicKey);
@@ -464,9 +471,9 @@ public class LeshanServerDemo {
                                 System.exit(-1);
                             }
                             builder.setPrivateKey((PrivateKey) key);
-                            serverCertificate = (X509Certificate) keyStore.getCertificate(alias);
-                            builder.setCertificateChain(
-                                    x509CertificateChain.toArray(new X509Certificate[x509CertificateChain.size()]));
+                            serverCertificateChain = x509CertificateChain
+                                    .toArray(new X509Certificate[x509CertificateChain.size()]);
+                            builder.setCertificateChain(serverCertificateChain);
                         }
                     }
                     builder.setTrustedCertificates(
@@ -478,15 +485,15 @@ public class LeshanServerDemo {
             }
         }
 
-        if (publicKey == null && serverCertificate == null) {
+        if (publicKey == null && serverCertificateChain == null) {
             // public key or server certificated is not defined
             // use default embedded credentials (X.509 + RPK mode)
             try {
                 PrivateKey embeddedPrivateKey = SecurityUtil.privateKey
                         .readFromResource("credentials/server_privkey.der");
-                serverCertificate = SecurityUtil.certificate.readFromResource("credentials/server_cert.der");
+                serverCertificateChain = SecurityUtil.certificateChain.readFromResource("credentials/server_cert.der");
                 builder.setPrivateKey(embeddedPrivateKey);
-                builder.setCertificateChain(new X509Certificate[] { serverCertificate });
+                builder.setCertificateChain(serverCertificateChain);
             } catch (Exception e) {
                 LOG.error("Unable to load embedded X.509 certificate.", e);
                 System.exit(-1);
@@ -494,7 +501,7 @@ public class LeshanServerDemo {
         }
 
         // Define trust store
-        if (serverCertificate != null && keyStorePath == null) {
+        if (serverCertificateChain != null && keyStorePath == null) {
             if (trustStore != null && !trustStore.isEmpty()) {
                 builder.setTrustedCertificates(trustStore.toArray(new Certificate[trustStore.size()]));
             } else {
@@ -551,6 +558,7 @@ public class LeshanServerDemo {
         EventServlet eventServlet = new EventServlet(lwServer, lwServer.getSecuredAddress().getPort());
         ServletHolder eventServletHolder = new ServletHolder(eventServlet);
         root.addServlet(eventServletHolder, "/event/*");
+        root.addServlet(eventServletHolder, "/api/event/*");
 
         ServletHolder clientServletHolder = new ServletHolder(new ClientServlet(lwServer));
         root.addServlet(clientServletHolder, "/api/clients/*");
@@ -559,7 +567,7 @@ public class LeshanServerDemo {
         if (publicKey != null) {
             securityServletHolder = new ServletHolder(new SecurityServlet(securityStore, publicKey));
         } else {
-            securityServletHolder = new ServletHolder(new SecurityServlet(securityStore, serverCertificate));
+            securityServletHolder = new ServletHolder(new SecurityServlet(securityStore, serverCertificateChain[0]));
         }
         root.addServlet(securityServletHolder, "/api/security/*");
 

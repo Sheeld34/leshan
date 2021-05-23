@@ -8,11 +8,11 @@ Description=Leshan server
 [Service]
 User=root
 WorkingDirectory=/var/leshan/demo
-ExecStart=/bin/java -jar /var/leshan/server/leshan-server-demo-2.0.0-SNAPSHOT-jar-with-dependencies.jar -m /var/leshan/models
+ExecStart=/bin/java -jar /var/leshan/demo/leshan-server-jar-with-dependencies.jar -m /var/leshan/models
 
 SuccessExitStatus=143
 TimeoutStopSec=10
-Restart=on-failure
+Restart=always
 RestartSec=5
 
 [Install]
