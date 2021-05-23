@@ -15,7 +15,7 @@ angular.module('monitoringOdometerDirectives', [])
 				if ('undefined' !== typeof(resource.value)) {
 					if (resource.def.type === "float") {
 						return parseFloat(resource.value).toFixed(2);
-					} else if (resource.def.type === "interger") {
+					} else if (resource.def.type === "integer") {
 						return parseInt(resource.value);
 					}
 					return resource.value;
