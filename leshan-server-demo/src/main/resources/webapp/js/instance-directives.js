@@ -35,14 +35,47 @@ angular.module('instanceDirectives', [])
             scope.instance.observe = {tooltip : "Observe <br/>" + scope.instance.path};
 
             scope.getTemplateUrl = "partials/instance.html";
-            if (scope.parent.urn) {
-                if (scope.parent.urn.startsWith("urn:oma:lwm2m:oma:3")) {
+            if (scope.parent.id) {
+	            switch(scope.parent.id)
+	            {
+				case 3: // Device
                     scope.getTemplateUrl = "partials/models/3/instance.html";
-                } else if (scope.parent.urn.startsWith("urn:oma:lwm2m:oma:6")) {
+					break;
+
+				case 6: // Location
                     scope.getTemplateUrl = "partials/models/6/instance.html";
-                } else if (scope.parent.urn.startsWith("urn:oma:lwm2m:x:27241")) {
+ 					break;
+
+				case 3301: // Illuminance
+				case 3302: // Presence
+				case 3303: // Temperature
+				case 3304: // Humidity
+				case 3316: // Voltage
+				case 3317: // Current
+				case 3318: // Frequency
+				case 3319: // Depth
+				case 3320: // Percentage
+				case 3321: // Altitude
+				case 3322: // Load
+				case 3323: // Pressure
+				case 3324: // Loudness
+				case 3325: // Concentration
+				case 3326: // Acidity
+				case 3327: // Conductivity
+				case 3328: // Power
+				case 3329: // Power Factor
+				case 3330: // Distance
+				case 3331: // Energy
+                    scope.getTemplateUrl = "partials/models/ipso_sensor_instance.html";
+ 					break;
+
+				case 27241: // Demo BMS
                     scope.getTemplateUrl = "partials/models/27241/instance.html";
-                }
+ 					break;
+
+				default:
+					break;
+	            }
             }
 
             scope.writable = function() {

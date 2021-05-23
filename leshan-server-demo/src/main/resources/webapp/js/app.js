@@ -45,6 +45,7 @@ var sheeldApp = angular.module('SheeldApp', [
 	'objectLocationControllers',
 	'model3-resourceDirectives',
 	'model27241-resourceDirectives',
+	'objectIpsoSensorControllers',
 ]);
 
 sheeldApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

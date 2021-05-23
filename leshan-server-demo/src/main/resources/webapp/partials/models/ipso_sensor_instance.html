@@ -1,0 +1,35 @@
+<div ng-controller="objectIpsoSensorController as sensorController" class="object-ipso-sensor" >
+	<div class="row object-ipso-sensor-header">
+		<div ng-bind-html="application" class="text-center"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="row">
+				<div style="width: 150px; margin-left: auto; margin-right: auto;">
+					<ng-dial-gauge
+						border-color="grey"
+						border-width="0"
+						ng-model="gauge_bat"
+						bar-color="red"
+						bar-width="10"
+						angle="270"
+						rotate="180"
+						line-cap="round"
+						scale-minor-width = "1"
+						scale-major-width = "2"
+						value="{{sensorController.getValue()}}"
+						
+						options="sensorController.gauge_options"
+						></ng-dial-gauge>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1 text-muted small"><span ng-if="instance.observed" class="glyphicon glyphicon-eye-open"></span></div>
+				<div class="col-md-10" ng-include="'partials/instance-observe.html'"></div>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<linear-graph></linear-graph>
+		</div>
+	</div>
+</div>
