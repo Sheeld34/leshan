@@ -57,12 +57,9 @@ angular.module('linearGraphDirectives', [])
 				scope.chart_options.chart.yAxis.axisLabel = scope.resource.def.units;
 				scope.chart_data[0].key = scope.resource.def.name;
 
-  				var res_listener = scope.$watch('resource', function(newValue, oldValue) {
-					if ('undefined' !== typeof(newValue.value)) {
-						res_listener(); // Unregister resource watch
-						scope.$watch('resource.value', function(newValue, oldValue) {
-							addValue(parseFloat(newValue), scope.resource.def.range_min, scope.resource.def.range_max);
-						}, true);
+  				scope.$watch('resource', function(newValue, oldValue) {
+					if ('undefined' !== typeof(newValue.value) && newValue.tooltip != oldValue.tooltip) {
+						addValue(parseFloat(newValue.value), scope.resource.def.range_min, scope.resource.def.range_max);
 					}
 				}, true);
 			}
