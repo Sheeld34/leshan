@@ -19,6 +19,12 @@ snap install --classic certbot
 ln -s /snap/bin/certbot /usr/bin/certbot
 
 # Configuger certbot pour les sites
+certbot
+
+# Configuration et lancement des services
+systemctl enable leshan_demo
+systemctl start leshan_demo
+systemctl status leshan_demo
 
 # Firewall
 # To                         Action      From
