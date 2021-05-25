@@ -8,7 +8,7 @@ Description=Leshan client demo
 [Service]
 User=root
 WorkingDirectory=/var/leshan/demo
-ExecStart=/var/leshan/demo/TesttLwM2MLinux.out
+ExecStart=/var/leshan/demo/TestLwM2MLinux.out
 
 SuccessExitStatus=143
 TimeoutStopSec=10
