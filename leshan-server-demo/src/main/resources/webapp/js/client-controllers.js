@@ -232,6 +232,8 @@ lwClientControllers.controller('ClientDetailCtrl', [
 
             var notificationCallback = function(msg) {
                 $scope.$apply(function() {
+                    var formattedDate = $filter('date')(new Date(), 'HH:mm:ss.sss');
+
                     var content = JSON.parse(msg.data);
                     var resource = lwResources.findResource($scope.objects, content.res);
                     if (resource) {
@@ -250,7 +252,6 @@ lwClientControllers.controller('ClientDetailCtrl', [
                         resource.valuesupposed = false;
                         resource.observed = true;
 
-                        var formattedDate = $filter('date')(new Date(), 'HH:mm:ss.sss');
                         resource.tooltip = formattedDate;
                     } else {
                         // instance?
