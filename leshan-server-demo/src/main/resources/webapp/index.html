@@ -28,10 +28,12 @@
 	<script src="vendor/js/ui-leaflet.min.js"></script>
 	<script src="vendor/js/odometer.min.js"></script>
 	<script src="vendor/js/angular-odometer.min.js"></script>
+	<script src="vendor/js/angular-loadscript.js"></script>
 	
 	<script src="js/app.js"></script>
 	<script src="js/client-controllers.js"></script>
 	<script src="js/security-controllers.js"></script>
+	<script src="js/location-controllers.js"></script>
 	<script src="js/lw-resources-services.js"></script>
 	<script src="js/modal-instance-controllers.js"></script>
 	<script src="js/modal-resource-controllers.js"></script>
@@ -64,7 +66,7 @@
 	</script>
 </head>
 
-<body>
+<body ng-controller="locationController">
 	<div class="navbar navbar-default navbar-static-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">

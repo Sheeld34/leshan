@@ -29,6 +29,8 @@
 	</div>
 </span>
 
+<div ng-include="'partials/demo.html'" ng-if="isDemoLocation"></div>
+
 <span ng-if="error">
 	<div class="alert alert-danger">{{error}}</div>
 </span>

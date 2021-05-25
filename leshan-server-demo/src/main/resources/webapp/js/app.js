@@ -28,6 +28,7 @@ var sheeldApp = angular.module('SheeldApp', [
 	'resourceObserveDirectives',
 	'lwResourcesServices',
 	'securityControllers',
+	'locationControllers',
 	'uiDialogServices',
 	'modalInstanceControllers',
 	'modalResourceControllers',

@@ -290,3 +290,17 @@ body {
 a {
 	color : #25A79C;
 }
+
+/* Demo page */
+.demo_container {
+	margin-top: 100px;
+}
+
+.demo_contact_form {
+	padding-top: 50px;
+}
+
+.hubspot_contact_form {
+	overflow: hidden;
+	height: 260px;
+}
