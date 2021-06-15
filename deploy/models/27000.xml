@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>VCU Output HMI</Name>
+		<Description1><![CDATA[Vision Marine Technologies VCU Output for HMI]]></Description1>
+		<ObjectID>27000</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:27000</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="0">
+				<Name>Radiator output temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Radiator output temperature]]></Description>
+			</Item>
+			<Item ID="1">
+				<Name>Radiator input temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Radiator input temperature]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>Battery input temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Battery input temperature]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>Battery output temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Battery output temperature]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>Inverter internal temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Inverter internal temperature]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>Motor internal temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Motor internal temperature]]></Description>
+			</Item>
+			<Item ID="6">
+				<Name>Charger internal temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Charger internal temperature]]></Description>
+			</Item>
+			<Item ID="7">
+				<Name>Battery internal temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Battery internal temperature]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>High voltage from power battery</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..10000</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[High voltage from power battery]]></Description>
+			</Item>
+			<Item ID="9">
+				<Name>High voltage from motor</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..10000</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[High voltage from motor]]></Description>
+			</Item>
+			<Item ID="10">
+				<Name>DCDC 1 output low voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[DCDC 1 output low voltage]]></Description>
+			</Item>
+			<Item ID="11">
+				<Name>DCDC 2 output low voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[DCDC 2 output low voltage]]></Description>
+			</Item>
+			<Item ID="12">
+				<Name>DCDC 3 output low voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[DCDC 3 output low voltage]]></Description>
+			</Item>
+			<Item ID="13">
+				<Name>Low voltage from service battery</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[Low voltage from service battery]]></Description>
+			</Item>
+			<Item ID="14">
+				<Name>Current from power battery</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..10000</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[Current from power battery]]></Description>
+			</Item>
+			<Item ID="15">
+				<Name>Current from motor</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..10000</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[Current from motor]]></Description>
+			</Item>
+			<Item ID="16">
+				<Name>DCDC 1 output current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[DCDC 1 output current]]></Description>
+			</Item>
+			<Item ID="17">
+				<Name>DCDC 2 output current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[DCDC 2 output current]]></Description>
+			</Item>
+			<Item ID="18">
+				<Name>DCDC 3 output current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[DCDC 3 output current]]></Description>
+			</Item>
+			<Item ID="19">
+				<Name>12V/24V pump current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[12V/24V pump current]]></Description>
+			</Item>
+		</Resources>
+		<Description2 />
+	</Object>
+</LWM2M>

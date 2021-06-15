@@ -69,6 +69,9 @@ angular.module('instanceDirectives', [])
                     scope.getTemplateUrl = "partials/models/ipso_sensor_instance.html";
  					break;
 
+				case 27000: // V-MTI VCU HMI
+                    scope.getTemplateUrl = "partials/models/27000/instance.html";
+ 					break;
 				case 27241: // Demo BMS
                     scope.getTemplateUrl = "partials/models/27241/instance.html";
  					break;

@@ -45,6 +45,7 @@ var sheeldApp = angular.module('SheeldApp', [
 	'monitoringOdometerDirectives',
 	'objectLocationControllers',
 	'model3-resourceDirectives',
+	'model27000-resourceDirectives',
 	'model27241-resourceDirectives',
 	'objectIpsoSensorControllers',
 ]);
