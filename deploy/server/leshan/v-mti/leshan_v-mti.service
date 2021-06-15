@@ -1,0 +1,19 @@
+# systemctl enable /var/leshan/v-mti/leshan_v-mti.service
+# systemctl start leshan_v-mti
+# systemctl status leshan_v-mti
+
+[Unit]
+Description=Leshan server
+
+[Service]
+User=root
+WorkingDirectory=/var/leshan/v-mti
+ExecStart=/bin/java -jar /var/leshan/v-mti/leshan-server-jar-with-dependencies.jar -wp 8082 -lp 5687 -slp 5688 -m /var/leshan/models
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
