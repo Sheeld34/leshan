@@ -10,7 +10,16 @@ apt-get install default-jre nginx
 # Copier le dossier models dans /var/leshan
 # Copier le dossier nginx dans /etc/nginx
 
-# ln -s /etc/nginx/sites-available/leshan_demo /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/leshan_demo /etc/nginx/sites-enabled/
+
+# Check nginx server config errors
+nginx -t
+
+systemctl reload nginx
+systemctl restart nginx
+
+# User for web site
+htpasswd /var/leshan/admin/.htpasswd an_user
 
 # Installer certbot
 snap install core
@@ -22,7 +31,7 @@ ln -s /snap/bin/certbot /usr/bin/certbot
 certbot
 
 # Configuration et lancement des services
-systemctl enable leshan_demo
+systemctl enable /var/leshan/demo/leshan_demo.service
 systemctl start leshan_demo
 systemctl status leshan_demo
 
@@ -39,6 +48,8 @@ systemctl status leshan_demo
 # 5686                       ALLOW IN    Anywhere         
 
 ufw allow 22
-ufw allow xxx
+ufw allow 80
+ufw allow 443
+ufw allow 5681:5690/udp
 ufw enable
-ufw status verbose
+ufw status numbered
