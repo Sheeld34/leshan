@@ -1,0 +1,19 @@
+# systemctl enable /var/leshan/admin/leshan_admin.service
+# systemctl start leshan_admin
+# systemctl status leshan_admin
+
+[Unit]
+Description=Leshan server
+
+[Service]
+User=root
+WorkingDirectory=/var/leshan/admin
+ExecStart=/bin/java -jar /var/leshan/admin/leshan-server-jar-with-dependencies.jar -wp 8079 -lp 5681 -slp 5682 -m /var/leshan/models
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
