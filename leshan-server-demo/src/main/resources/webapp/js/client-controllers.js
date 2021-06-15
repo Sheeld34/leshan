@@ -173,7 +173,7 @@ lwClientControllers.controller('ClientDetailCtrl', [
 
         // default format
         $scope.settings={};
-        $scope.settings.timeout = {format:"5s", value:5};
+        $scope.settings.timeout = {format:"10s", value:10};
         $scope.settings.multi = {format:"TLV"};
         $scope.settings.single = {format:"TLV"};
 
