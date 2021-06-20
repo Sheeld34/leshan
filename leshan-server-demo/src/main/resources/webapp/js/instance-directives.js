@@ -72,6 +72,15 @@ angular.module('instanceDirectives', [])
 				case 27000: // V-MTI VCU HMI
                     scope.getTemplateUrl = "partials/models/27000/instance.html";
  					break;
+				case 27020: // Tyva BMS
+                    scope.getTemplateUrl = "partials/models/27020/instance.html";
+ 					break;
+				case 27022: // Tyva BMS
+                    scope.getTemplateUrl = "partials/models/27022/instance.html";
+ 					break;
+				case 27023: // Tyva BMS
+                    scope.getTemplateUrl = "partials/models/27023/instance.html";
+ 					break;
 				case 27241: // Demo BMS
                     scope.getTemplateUrl = "partials/models/27241/instance.html";
  					break;

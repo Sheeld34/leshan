@@ -46,6 +46,9 @@ var sheeldApp = angular.module('SheeldApp', [
 	'objectLocationControllers',
 	'model3-resourceDirectives',
 	'model27000-resourceDirectives',
+	'model27020-resourceDirectives',
+	'model27022-resourceDirectives',
+	'model27023-resourceDirectives',
 	'model27241-resourceDirectives',
 	'objectIpsoSensorControllers',
 ]);

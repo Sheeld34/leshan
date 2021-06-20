@@ -1,0 +1,8 @@
+<div>
+	<div class="row  instance-single-line">
+		<div class="col-md-4 instance-name">{{instance.name}}</div>
+		<div class="col-md-1 text-muted small"><span ng-if="instance.observed" class="glyphicon glyphicon-eye-open"></span></div>
+		<div class="col-md-6" ng-include="'partials/instance-observe.html'"></div>
+	</div>
+	<model27020-resource ng-repeat='resource in instance.resources' resource='resource' parent='instance' settings='settings'></model27020-resource>
+</div>

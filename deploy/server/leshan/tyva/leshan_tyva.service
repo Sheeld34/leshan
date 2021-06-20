@@ -1,0 +1,19 @@
+# systemctl enable /var/leshan/tyva/leshan_tyva.service
+# systemctl start leshan_tyva
+# systemctl status leshan_tyva
+
+[Unit]
+Description=Leshan server
+
+[Service]
+User=root
+WorkingDirectory=/var/leshan/tyva
+ExecStart=/bin/java -jar /var/leshan/tyva/leshan-server-jar-with-dependencies.jar -wp 8083 -lp 5689 -slp 5690 -m /var/leshan/models
+
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

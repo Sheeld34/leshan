@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>Tyva BMS - States</Name>
+		<Description1><![CDATA[Tyva Energie BMS]]></Description1>
+		<ObjectID>27020</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:27020</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="0">
+				<Name>Firmware version</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Firmware version]]></Description>
+			</Item>
+			<Item ID="1">
+				<Name>Configuration file version</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Configuration file version]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>Balancing</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Balancing]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>State</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..8</RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[State]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>External Temperature 1</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>-120..120</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[External Temperature]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>External Temperature 2</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>-120..120</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[External Temperature]]></Description>
+			</Item>
+			<Item ID="6">
+				<Name>External Temperature 3</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>-120..120</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[External Temperature]]></Description>
+			</Item>
+			<Item ID="7">
+				<Name>Charger TCC max voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[Charger TCC max voltage]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>Charger TCC max current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>A</Units>
+				<Description><![CDATA[Charger TCC max current]]></Description>
+			</Item>
+			<Item ID="9">
+				<Name>Charger TCC charger control</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..1</RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[0:Charger Starting;1:Battery Protection]]></Description>
+			</Item>
+		</Resources>
+		<Description2><![CDATA[]]></Description2>
+	</Object>
+</LWM2M>

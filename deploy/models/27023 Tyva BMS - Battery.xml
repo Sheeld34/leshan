@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>Tyva BMS - Battery</Name>
+		<Description1><![CDATA[Tyva Energie BMS, Battery and cells]]></Description1>
+		<ObjectID>27023</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:27023</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="0">
+				<Name>SOC</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..100</RangeEnumeration>
+				<Units>%</Units>
+				<Description><![CDATA[State Of Charge]]></Description>
+			</Item>
+			<Item ID="1">
+				<Name>SOH</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..100</RangeEnumeration>
+				<Units>%</Units>
+				<Description><![CDATA[State Of Health]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>Battery current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>A</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>Battery voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>Cell min voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>Cell max voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="6">
+				<Name>Cell 1 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="7">
+				<Name>Cell 2 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>Cell 3 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="9">
+				<Name>Cell 4 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="10">
+				<Name>Cell 5 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="11">
+				<Name>Cell 6 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="12">
+				<Name>Cell 7 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="13">
+				<Name>Cell 8 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="14">
+				<Name>Cell 9 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="15">
+				<Name>Cell 10 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="16">
+				<Name>Cell 11 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="17">
+				<Name>Cell 12 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="18">
+				<Name>Cell 13 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="19">
+				<Name>Cell 14 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="20">
+				<Name>Cell 15 voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="21">
+				<Name>Cell 0 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="22">
+				<Name>Cell 1 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="23">
+				<Name>Cell 2 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="24">
+				<Name>Cell 3 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="25">
+				<Name>Cell 4 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="26">
+				<Name>Cell 5 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="27">
+				<Name>Cell 6 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="28">
+				<Name>Cell 7 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="29">
+				<Name>Cell 8 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="30">
+				<Name>Cell 9 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="31">
+				<Name>Cell 10 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="32">
+				<Name>Cell 11 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="33">
+				<Name>Cell 12 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="34">
+				<Name>Cell 13 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="35">
+				<Name>Cell 14 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="36">
+				<Name>Cell 15 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="37">
+				<Name>Cell 16 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="38">
+				<Name>Cell 17 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="39">
+				<Name>Cell 18 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="40">
+				<Name>Cell 19 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="41">
+				<Name>Cell 20 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="42">
+				<Name>Cell 21 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="43">
+				<Name>Cell 22 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="44">
+				<Name>Cell 23 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="45">
+				<Name>Cell 24 balance request</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="46">
+				<Name>Cell min temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="47">
+				<Name>Cell max temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="48">
+				<Name>Cell mean temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..5</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="49">
+				<Name>I Maximum Discharge</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>A</Units>
+				<Description><![CDATA[Allowable discharging current]]></Description>
+			</Item>
+			<Item ID="50">
+				<Name>I Maximum Recharge</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>A</Units>
+				<Description><![CDATA[Allowable charging current]]></Description>
+			</Item>
+</Resources>
+		<Description2></Description2>
+</Object>
+</LWM2M>
