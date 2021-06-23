@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>VCU Output HMI</Name>
+		<Description1><![CDATA[Vision Marine Technologies VCU Output for HMI]]></Description1>
+		<ObjectID>27000</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:27000</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="0">
+				<Name>Radiator output temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Radiator output temperature]]></Description>
+			</Item>
+			<Item ID="1">
+				<Name>Radiator input temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Radiator input temperature]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>Battery input temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Battery input temperature]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>Battery output temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Battery output temperature]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>Inverter internal temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Inverter internal temperature]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>Motor internal temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Motor internal temperature]]></Description>
+			</Item>
+			<Item ID="6">
+				<Name>Charger internal temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Charger internal temperature]]></Description>
+			</Item>
+			<Item ID="7">
+				<Name>Battery internal temperature</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Battery internal temperature]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>High voltage from power battery</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..10000</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[High voltage from power battery]]></Description>
+			</Item>
+			<Item ID="9">
+				<Name>High voltage from motor</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..10000</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[High voltage from motor]]></Description>
+			</Item>
+			<Item ID="10">
+				<Name>DCDC 1 output low voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[DCDC 1 output low voltage]]></Description>
+			</Item>
+			<Item ID="11">
+				<Name>DCDC 2 output low voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[DCDC 2 output low voltage]]></Description>
+			</Item>
+			<Item ID="12">
+				<Name>DCDC 3 output low voltage</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[DCDC 3 output low voltage]]></Description>
+			</Item>
+			<Item ID="13">
+				<Name>Low voltage from service battery</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>V</Units>
+				<Description><![CDATA[Low voltage from service battery]]></Description>
+			</Item>
+			<Item ID="14">
+				<Name>Current from power battery</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..10000</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[Current from power battery]]></Description>
+			</Item>
+			<Item ID="15">
+				<Name>Current from motor</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..10000</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[Current from motor]]></Description>
+			</Item>
+			<Item ID="16">
+				<Name>DCDC 1 output current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[DCDC 1 output current]]></Description>
+			</Item>
+			<Item ID="17">
+				<Name>DCDC 2 output current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[DCDC 2 output current]]></Description>
+			</Item>
+			<Item ID="18">
+				<Name>DCDC 3 output current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[DCDC 3 output current]]></Description>
+			</Item>
+			<Item ID="19">
+				<Name>12V/24V pump current</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..260</RangeEnumeration>
+				<Units>Ah</Units>
+				<Description><![CDATA[12V/24V pump current]]></Description>
+			</Item>
+			<Item ID="20">
+				<Name>Headcontrol lever 1 position</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..100</RangeEnumeration>
+				<Units>%</Units>
+				<Description><![CDATA[Headcontrol lever position]]></Description>
+			</Item>
+			<Item ID="21">
+				<Name>Headcontrol lever 2 position</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0.100</RangeEnumeration>
+				<Units>%</Units>
+				<Description><![CDATA[Headcontrol lever position]]></Description>
+			</Item>
+			<Item ID="22">
+				<Name>RND port 1 validated</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="23">
+				<Name>RND port 1 reverse</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="24">
+				<Name>RND port 1 neutral</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="25">
+				<Name>RND port 1 drive</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="26">
+				<Name>RND starboard 1 validated</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="27">
+				<Name>RND starboard 1 reverse</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="28">
+				<Name>RND starboard 1 neutral</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="29">
+				<Name>RND starboard 1 drive</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="30">
+				<Name>RND port 2 validated</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="31">
+				<Name>RND port 2 reverse</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="32">
+				<Name>RND port 2 neutral</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="33">
+				<Name>RND port 2 drive</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="34">
+				<Name>RND starboard 2 validated</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="35">
+				<Name>RND starboard 2 reverse</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="36">
+				<Name>RND starboard 2 neutral</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="37">
+				<Name>RND starboard 2 drive</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="38">
+				<Name>Motor 1 TRIM position</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..100</RangeEnumeration>
+				<Units>%</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="39">
+				<Name>Motor 2 TRIM position</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..100</RangeEnumeration>
+				<Units>%</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="40">
+				<Name>Motor steering angle</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>deg</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="41">
+				<Name>SOC</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..100</RangeEnumeration>
+				<Units>%</Units>
+				<Description><![CDATA[State Of Charge]]></Description>
+			</Item>
+			<Item ID="42">
+				<Name>Motor speed</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-30000..30000</RangeEnumeration>
+				<Units>RPM</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="43">
+				<Name>Motor torque</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>Nm</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="44">
+				<Name>Propeller speed</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-30000..30000</RangeEnumeration>
+				<Units>RPM</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="45">
+				<Name>Outboard motor failure</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="46">
+				<Name>Outboard inverter failure</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="47">
+				<Name>Outboard power failure</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="48">
+				<Name>Outboard internal failure</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="49">
+				<Name>Outboard cooling circuit failure</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="50">
+				<Name>Outboard drive selection failure</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="51">
+				<Name>Outboard flash failure</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="52">
+				<Name>Outboard temperature failure</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="53">
+				<Name>Outboard limited</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="54">
+				<Name>Outboard maintenance</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="55">
+				<Name>Outboard eco mode</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="56">
+				<Name>Outboard sport mode</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="57">
+				<Name>Outboard regen enabled</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="58">
+				<Name>Outboard inverter enabled</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="59">
+				<Name>Outboard HV detected</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="60">
+				<Name>Outboard started</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="61">
+				<Name>Outboard 1 water flow rate</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..26</RangeEnumeration>
+				<Units>l/min</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="62">
+				<Name>Battery 1 water flow rate</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..26</RangeEnumeration>
+				<Units>l/min</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="63">
+				<Name>Outboard 2 water flow rate</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..26</RangeEnumeration>
+				<Units>l/min</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="64">
+				<Name>Battery 2 water flow rate</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Float</Type>
+				<RangeEnumeration>0..26</RangeEnumeration>
+				<Units>l/min</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="65">
+				<Name>Cooling air temperature 1</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="66">
+				<Name>Cooling air temperature 2</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>-100..100</RangeEnumeration>
+				<Units>Cel</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="67">
+				<Name>Leakage detector</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..255</RangeEnumeration>
+				<Units>KOhm</Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="68">
+				<Name>Motor 1 cooling issue</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="69">
+				<Name>Motor 2 cooling issue</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="70">
+				<Name>Battery 1 cooling issue</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="71">
+				<Name>Battery 2 cooling issue</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="72">
+				<Name>Motor 1 derating</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="73">
+				<Name>Motor 2 derating</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="74">
+				<Name>Battery 1 derating</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+			<Item ID="75">
+				<Name>Battery 2 derating</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Description.]]></Description>
+			</Item>
+		</Resources>
+		<Description2 />
+	</Object>
+</LWM2M>

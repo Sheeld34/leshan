@@ -31,6 +31,14 @@ angular.module('model27000-resourceDirectives', [])
 				case 17:
 				case 18:
 				case 19:
+				case 20:
+				case 21:
+				case 38:
+				case 39:
+				case 40:
+				case 41:
+				case 65:
+				case 66:
 					scope.getTemplateUrl = "partials/resource-gauge.html";
 					break;
 
