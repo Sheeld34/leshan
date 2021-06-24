@@ -10,22 +10,48 @@ angular.module('objectIpsoSensorControllers', [])
 			scaleMax: 100,
 			units: null
 		};
+		
+		this.chart_options = {
+			series: [
+				{
+					axis: 'y',
+					dataset: 'dataset0',
+					key: 'y_0',
+					color: "#1f77b4",
+					type: ['line']
+				}
+			],
+			axes: {
+				x: {
+					key: 'x',
+					type: 'date',
+					tickFormat: function(value, index) {
+						return d3.time.format('%H:%M:%S')(value);
+					}
+				},
+				y: {
+					tickFormat: function(value, index) {
+						return getPrecisionValue(value, 2);
+					}
+				}
+			},
+			symbols: [
+				{
+					type: 'hline',
+					color: 'hsla(120, 100%, 36%, 1)',
+					axis: 'y'
+				},
+				{
+					type: 'hline',
+					color: 'hsla(5, 100%, 36%, 1)',
+					axis: 'y'
+				}
+			]
+		};
+
+		this.chart_data = { dataset0: [] };
 
 		$scope.writable = function() { return false; }
-
-		this.getValue = function() {
-			if (typeof this.sensor.value !== 'undefined')
-			{
-				var precision = getFloatPrecision(this.sensor.value);
-				if (precision > 2) {
-					precision = 2;
-				}
-				
-				return this.sensor.value.toFixed(precision);
-			}
-			
-			return 0;
-		}
 
 		$scope.$on('collapseObjectEvent', function(event, open) {
 		});
@@ -36,6 +62,8 @@ angular.module('objectIpsoSensorControllers', [])
 			}
 		}, true);
 
+		this.getValue = function() { return getPrecisionValue(this.sensor.value, 2); };
+
 		this.update = function(resources) {
 			var options = {};
 			
@@ -44,16 +72,22 @@ angular.module('objectIpsoSensorControllers', [])
 					switch (resource.id) {
 						case 5700: // Sensor Value (1.0)
 							this.sensor.value = parseFloat(resource.value);
+							this.addValue(this.sensor.value);
 							break;
 						case 5701: // Sensor Unit (1.0)
 							this.sensor.units = resource.value;
 							options.units = this.sensor.units;
+							this.chart_options.series[0].label = this.sensor.units;
 							break;
 						case 5601: // Min Measured Value (1.0)
 							this.sensor.min_measured = resource.value;
+							this.chart_options.axes.y.min = this.sensor.min_measured * 0.99;
+							this.chart_options.symbols[0].value = this.sensor.min_measured;
 							break;
 						case 5602: // Max Measured Value (1.0)
 							this.sensor.max_measured = resource.value;
+							this.chart_options.axes.y.max = this.sensor.max_measured * 1.01;
+							this.chart_options.symbols[1].value = this.sensor.max_measured;
 							break;
 						case 5603: // Min Measured Value (1.0)
 							this.sensor.min_range = resource.value;
@@ -89,6 +123,35 @@ angular.module('objectIpsoSensorControllers', [])
 			}
 			
 			this.gauge_options = options;
+		};
+
+		this.addValue = function(value) {
+			if ('undefined' === typeof(this.chart_options.axes.y.min)) {
+				this.chart_options.axes.y.min = value;
+			}
+			if ('undefined' === typeof(this.chart_options.axes.y.max)) {
+				this.chart_options.axes.y.max = value;
+			}
+
+			if (this.chart_data.dataset0.length >= 200) {
+				this.chart_data.dataset0.shift();
+			}
+
+			this.chart_data.dataset0.push({ x: new Date(), y_0: value });
+		};
+
+		function getPrecisionValue(value, prec) {
+			if (typeof value !== 'undefined')
+			{
+				var precision = getFloatPrecision(value);
+				if (precision > prec) {
+					precision = prec;
+				}
+				
+				return value.toFixed(precision);
+			}
+			
+			return 0;
 		};
 
 		function getFloatPrecision(a) {

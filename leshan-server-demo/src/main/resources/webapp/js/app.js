@@ -37,10 +37,8 @@ var sheeldApp = angular.module('SheeldApp', [
 	'helperServices',
 	'fileModelDirectives',
 	'angular-dialgauge',
-	'nvd3',
 	'ui-leaflet',
 	'ui.odometer',
-	'linearGraphDirectives',
 	'monitoringGaugeDirectives',
 	'monitoringOdometerDirectives',
 	'objectLocationControllers',
@@ -51,6 +49,7 @@ var sheeldApp = angular.module('SheeldApp', [
 	'model27023-resourceDirectives',
 	'model27241-resourceDirectives',
 	'objectIpsoSensorControllers',
+	'n3-line-chart'
 ]);
 
 sheeldApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
