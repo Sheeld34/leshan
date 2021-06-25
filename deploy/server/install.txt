@@ -4,7 +4,13 @@
 #Ubuntu
 apt-get update
 apt-get upgrade
-apt-get install default-jre nginx
+apt-get install default-jre nginx ufw snapd
+
+# Installer certbot
+snap install core
+snap refresh core
+snap install --classic certbot
+ln -s /snap/bin/certbot /usr/bin/certbot
 
 # Copier le dossier Leshan dans /var
 # Copier le dossier models dans /var/leshan
@@ -20,12 +26,6 @@ systemctl restart nginx
 
 # User for web site
 htpasswd /var/leshan/admin/.htpasswd an_user
-
-# Installer certbot
-snap install core
-snap refresh core
-snap install --classic certbot
-ln -s /snap/bin/certbot /usr/bin/certbot
 
 # Configuger certbot pour les sites
 certbot
@@ -49,5 +49,6 @@ ufw allow 22
 ufw allow 80
 ufw allow 443
 ufw allow 5681:5690/udp
+ufw allow 5681:5690/tcp
 ufw enable
 ufw status numbered
